@@ -27,25 +27,25 @@ const getById = async (request, response) => {
 
 const createdUser = async (request, response) => {
   try {
-      const user = new user(require.body);
+    const user = new user(require.body);
 
-      const newUser = await user.save()
-      response.status(201).json({
-          mensagem: "Cadastro criado com sucesso",
-          user: newUser,
-      })
+    const newUser = await user.save()
+    response.status(201).json({
+      mensagem: "Cadastro criado com sucesso",
+      user: newUser,
+    })
 
   } catch (error) {
-      response.status(500).json({
-          mensagem: error.message,
-      })
+    response.status(500).json({
+      mensagem: error.message,
+    })
   }
 }
 
 const updateUser = async (request, response) => {
   try {
     const updateUser = await user.findById(req.params.id);
-     if (updateUser){
+    if (updateUser) {
 
       updateUser.name = req.body.name || updateUser.name
       updateUser.email = req.body.email || updateUser.email
@@ -64,7 +64,7 @@ const updateUser = async (request, response) => {
       menssage: "Usuário atualizado com sucesso",
       saveUser
     })
-    response.status (400).json({
+    response.status(400).json({
       message: "Usuário não Encontrado"
     })
   } catch (error) {
@@ -76,21 +76,21 @@ const updateUser = async (request, response) => {
 
 const deleteUser = async (request, response) => {
   try {
-      const deleteUser = await use.findById(req.params.id);
+    const deleteUser = await use.findById(req.params.id);
 
-      if (deleteUser == null) {
-          response.status(404).json({
-              message: "Usuário não encontrado."
-          })
-      }
-      await deleteUser.delete();
-      response.status(200).json({
-          message: "Cadastro deletado com sucesso."
+    if (deleteUser == null) {
+      response.status(404).json({
+        message: "Usuário não encontrado."
       })
+    }
+    await deleteUser.delete();
+    response.status(200).json({
+      message: "Cadastro deletado com sucesso."
+    })
   } catch (error) {
-      response.status(500).json({
-          message: error.message
-      })
+    response.status(500).json({
+      message: error.message
+    })
   }
 }
 
@@ -102,5 +102,5 @@ module.exports = {
   createdUser,
   updateUser,
   deleteUser
-  
+
 }

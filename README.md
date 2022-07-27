@@ -4,23 +4,21 @@
  Projeto Final Todas Em Tech Backend {reprograma}:
  Criar um API aplicando CRUD com tema livre.
 
- Buscando como público alvo mulheres, inspirei-me em criar essa API baseada em um grupo de whatsapp, visando uma visão amplas e fácil acesso a uma rede de mulheres em todo Brasil que trampam com conserto de aparalhes eletrônicos.Visando dar à outras mulheres a liberdade de trocar na mesma lingua.
+ Buscando como público alvo mulheres, inspirei-me em criar essa API para que podessemos nos conectarmos e tomar  conhecimentos mais amplos ao nível  de mulheres na tecnologia, à fim de que as mesmas conectem entre si para trocas, sugestões, ajudas, indicações tendo assim um ponto de apoio maior.
 <br/><br/>
-
 
 ## Descrição da API
 Cadastro de mulheres especializadas em manutenção de celular.
 <br/><br/>
 
 
-
-
-<br>
+## Documentação
+Veja a documentação do POSTMAN com as Rotas e demonstrando as informações a serem passada: [Postman]
 
 ## 📁 Arquitetura MVC 
 
 ```
- 📁 PROJETOfINAL
+ 📁 PROJETOFINAL
    |
    |-  📁node_modules
    |-  📁 src
@@ -59,7 +57,7 @@ Para a instalação do projeto siga as instruções:
 É necesário possuir instalado as ferramentas:
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/en/)
-- database NoSQL [Mongodb](https://www.mongodb.com)
+- [database NoSQL] [Mongodb](https://www.mongodb.com)
 - IDE de sua preferencia, para a criação deste projeto foi utilizado o [VSCode](https://code.visualstudio.com).
 
 ### Rodando o Projeto
@@ -114,7 +112,7 @@ Para construção desse projeto foi utilizado:
 | ------------ | ----------------------- | ------------------------------------ |
 | GET          | `/user/all`                | Retorna todos os usuários            |
 | GET          | `/user /search/:id`        | Retorna o usuario referente ao ID solicitado              |
-| POST         | `/user /register`         | Cria/cadastra um novo usuário        |
+| POST         | `/user /created`         | Cria/cadastra um novo usuário        |
 | PUT          | `/ user /update/:id`     | Altera informações de um usuário     |
 | DELETE       | `/user/delete/:id`     | Deleta um usuário específico         |
 
@@ -130,5 +128,5 @@ Para construção desse projeto foi utilizado:
 *  Terminar implementação de código Front-end.
 * Criar endpoints e permissões de administradores para plataforma.
 * Criar um espaço para contratações
-
+* Desenvolver uma plataforma online/ aplicativo que ofereça o serviço  reparo e manutenção de celulares feito por mulheres para mulheres
 <br>
