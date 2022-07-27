@@ -12,7 +12,7 @@ const db = require('./database/mongoConfig');
 
 app.use(express.json());
 
-const tecnicasRoutes = require('./routes/tecnicasRoutes');
+const tecnicasRoutes = require('./routes/userRoutes');
 
 
 app.use("/tecnicas", tecnicasRoutes);
