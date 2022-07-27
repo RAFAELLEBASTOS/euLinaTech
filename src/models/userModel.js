@@ -22,6 +22,24 @@ const UserSchema = new mongoose.Schema({
     city:{
      type: String,
      required: true }, 
+    cnpj:{
+     type: Number,
+     required: true },
+    description:{
+     type: String,
+     required: true }, 
+    experiences:{
+     type: String,
+     required: true },
+    brands:{
+     type: String,
+     enum: ["Samsung","Motorola","Apple","Xiaomi","LG","ASUS","Alcatel","Huawei","Lenovo","Outros"],
+     required: true },
+
+    
+
+    
+   
 
 })
 

@@ -1,5 +1,6 @@
 const UserSchema = require('../models/userModel')
 
+
 const getAll = async (request, response) => {
   try {
     const user = await UserSchema.find();
@@ -24,26 +25,72 @@ const getById = async (request, response) => {
   }
 }
 
-const created = async (request, response) => {
+const createdUser = async (request, response) => {
   try {
-    const user = new UserSchema({
+      const user = new user(require.body);
 
-      Nome: req.body.Nome,
-      Email: req.body.Email,
-      Telefone: req.body.Telefone,
-      País: req.body.País,
-      Estado: req.body.Estado,
-      Cidade: req.body.Cidade
-    })
+      const newUser = await user.save()
+      response.status(201).json({
+          mensagem: "Cadastro criado com sucesso",
+          user: newUser,
+      })
+
+  } catch (error) {
+      response.status(500).json({
+          mensagem: error.message,
+      })
+  }
+}
+
+const updateUser = async (request, response) => {
+  try {
+    const updateUser = await user.findById(req.params.id);
+     if (updateUser){
+
+      updateUser.name = req.body.name || updateUser.name
+      updateUser.email = req.body.email || updateUser.email
+      updateUser.telephone = req.body.telepone || updateUser.telephone
+      updateUser.country = req.body.country || updateUser.country
+      updateUser.state = req.body.state || updateUser.state
+      updateUser.city = req.body.city || updateUser.city
+      updateUser.cnpj = req.body.cnpj || updateUser.cnpj
+      updateUser.description = req.body.description || updateUser.description
+      updateUser.experiences = req.body.experiences || updateUser.experiences
+      updateUser.brands = req.body.brands || updateUser.brands
+    }
 
     const saveUser = await user.save();
-    response.status(201).json({
-      user: saveUser
+    response.status(200).json({
+      menssage: "Usuário atualizado com sucesso",
+      saveUser
+    })
+    response.status (400).json({
+      message: "Usuário não Encontrado"
     })
   } catch (error) {
-    response.status(500).json({
+    response.status(404).json({
       mensagem: error.message
     })
+  }
+}
+
+const deleteUser = async (request, response) => {
+  try {
+      const deleteUser = await use.findById(req.params.id);
+
+      if (deleteUser == null) {
+          response.status(404).json({
+              message: "Usuário não encontrado."
+          })
+      }
+      await deleteUser.delete();
+      response.status(200).json({
+          message: "Cadastro deletado com sucesso."
+      })
+  } catch (error) {
+      response.status(500).json({
+          message: error.message
+      })
   }
 }
 
@@ -52,6 +99,8 @@ const created = async (request, response) => {
 module.exports = {
   getAll,
   getById,
-  created
+  createdUser,
+  updateUser,
+  deleteUser
   
 }
