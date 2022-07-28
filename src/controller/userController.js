@@ -1,7 +1,8 @@
 const UserSchema = require('../models/userModel')
 const bcrypt = require("bcrypt");
 const { hashPassword} = require("../helpers/auth");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const { request } = require('../app');
 
 const getAll = async (request, response) => {
   try {
@@ -47,9 +48,9 @@ const createdUser = async (request, response) => {
   }
 }
 
-const updateUser = async (request, response) => {
+const updateUser = async (req, response) => {
   try {
-    const updateUser = await user.findById(req.params.id);
+    const updateUser = await UserSchema.findById(req.params.id);
     if (updateUser) {
 
       updateUser.name = req.body.name || updateUser.name
@@ -62,13 +63,15 @@ const updateUser = async (request, response) => {
       updateUser.description = req.body.description || updateUser.description
       updateUser.experiences = req.body.experiences || updateUser.experiences
       updateUser.brands = req.body.brands || updateUser.brands
+
+      const saveUser = await updateUser.save();
+      return response.status(200).json({
+        menssage: "Usuário atualizado com sucesso",
+        saveUser
+    })
     }
 
-    const saveUser = await user.save();
-    response.status(200).json({
-      menssage: "Usuário atualizado com sucesso",
-      saveUser
-    })
+    
     response.status(400).json({
       message: "Usuário não Encontrado"
     })

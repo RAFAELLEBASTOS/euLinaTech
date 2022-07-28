@@ -29,7 +29,13 @@ Veja a documentação do POSTMAN com as Rotas e demonstrando as informações a 
    |    |- 📁 database
    |         |- 📑 mongoConfig.js
    |
-   |    |- 📁 models
+   |    |- 📁 helpers
+   |         |- 📑 auth.js
+   |
+   |    |- 📁 middlewares
+   |         |- 📑 auth.js
+   |
+   |   |    |- 📁 models
    |         |- 📑 userModel.js
    |
    |    |- 📁 routes
@@ -106,17 +112,30 @@ Para construção desse projeto foi utilizado:
     * Utilize o [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/download/) para para chamar e testar os endpoints da API localmente ou via Heroku
 
 <br>
-## 🔃 Manipulação das Rotas de Alunos:
 
-| Método HTTP  | Endpoint                | Descrição                            |
-| ------------ | ----------------------- | ------------------------------------ |
-| GET          | `/user/all`                | Retorna todos os usuários            |
-| GET          | `/user /search/:id`        | Retorna o usuario referente ao ID solicitado              |
-| POST         | `/user /created`         | Cria/cadastra um novo usuário        |
-| PUT          | `/ user /update/:id`     | Altera informações de um usuário     |
-| DELETE       | `/user/delete/:id`     | Deleta um usuário específico         |
+## Rotas
 
-<br>
+### Rota inicial
+
+#### Localhost
+| Método HTTP  | Tipo Rota | Endpoint                     | Descrição                            |
+| ------------ | --------- | ---------------------------- | ------------------------------------ |
+| GET          | Pública   | `http://localhost:8989/`     |  Mensagem de apresentação (Index)    |
+
+#### Heroku
+| Método HTTP  | Tipo Rota | Endpoint                     | Descrição                            |
+| ------------ | --------- | ---------------------------- | ------------------------------------ |
+| GET          | Pública   | `https://eulina-tech.herokuapp.com/` |  Mensagem de apresentação (Index)    |
+
+### Rotas usuários
+| Método HTTP  | Tipo Rota | Endpoint                | Descrição                                            |
+| ------------ | --------- | ----------------------- | --------------------------------------------------|
+| GET          | Privada   | `/all`               | Retorna todos usuários  
+| GET          | Privada   | `/user /search/:id`  | Retorna o usuário referente ao ID solicitado
+| POST         | Pública   | `/user/create`       | Cria/Cadastra um novo usário                                      
+| POST         | Pública   | `/user/login`        | Retorna token de login                                             |
+| PATCH        | Privada   | `/ user /update/:id` | Altera informações de um usuário  |
+| DELETE       | Privada   | `/user/delete`       | Deleta um usuário específico      |
 
 <br>
 
@@ -124,9 +143,8 @@ Para construção desse projeto foi utilizado:
 
 <br>
 
-
 *  Terminar implementação de código Front-end.
 * Criar endpoints e permissões de administradores para plataforma.
 * Criar um espaço para contratações
-* Desenvolver uma plataforma online/ aplicativo que ofereça o serviço  reparo e manutenção de celulares feito por mulheres para mulheres
+
 <br>
