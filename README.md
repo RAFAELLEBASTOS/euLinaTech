@@ -135,7 +135,7 @@ Para construção desse projeto foi utilizado:
 | POST         | Pública   | `/user/create`       | Cria/Cadastra um novo usário                                      
 | POST         | Pública   | `/user/login`        | Retorna token de login                                             |
 | PATCH        | Privada   | `/ user /update/:id` | Altera informações de um usuário  |
-| DELETE       | Privada   | `/user/delete`       | Deleta um usuário específico      |
+| DELETE       | Privada   | `/user/delete/:id`       | Deleta um usuário específico      |
 
 <br>
 
@@ -145,6 +145,6 @@ Para construção desse projeto foi utilizado:
 
 *  Terminar implementação de código Front-end.
 * Criar endpoints e permissões de administradores para plataforma.
-* Criar um espaço para contratações
+* Criar um espaço para contratações.
 
 <br>

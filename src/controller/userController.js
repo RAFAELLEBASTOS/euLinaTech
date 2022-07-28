@@ -4,9 +4,9 @@ const { hashPassword} = require("../helpers/auth");
 const jwt = require("jsonwebtoken");
 const { request } = require('../app');
 
-const getAll = async (request, response) => {
+const getAll = async ( request, response) => {
   try {
-    const user = await UserSchema.find();
+    const user = await UserSchema.find(request.query);
     response.status(200).json(user);
   } catch (error) {
     response.status(500).json({
@@ -48,21 +48,21 @@ const createdUser = async (request, response) => {
   }
 }
 
-const updateUser = async (req, response) => {
+const updateUser = async (request, response) => {
   try {
-    const updateUser = await UserSchema.findById(req.params.id);
+    const updateUser = await UserSchema.findById(request.params.id);
     if (updateUser) {
 
-      updateUser.name = req.body.name || updateUser.name
-      updateUser.email = req.body.email || updateUser.email
-      updateUser.telephone = req.body.telepone || updateUser.telephone
-      updateUser.country = req.body.country || updateUser.country
-      updateUser.state = req.body.state || updateUser.state
-      updateUser.city = req.body.city || updateUser.city
-      updateUser.cnpj = req.body.cnpj || updateUser.cnpj
-      updateUser.description = req.body.description || updateUser.description
-      updateUser.experiences = req.body.experiences || updateUser.experiences
-      updateUser.brands = req.body.brands || updateUser.brands
+      updateUser.name = request.body.name || updateUser.name
+      updateUser.email = request.body.email || updateUser.email
+      updateUser.telephone = request.body.telepone || updateUser.telephone
+      updateUser.country = request.body.country || updateUser.country
+      updateUser.state = request.body.state || updateUser.state
+      updateUser.city = request.body.city || updateUser.city
+      updateUser.cnpj = request.body.cnpj || updateUser.cnpj
+      updateUser.description = request.body.description || updateUser.description
+      updateUser.experiences = request.body.experiences || updateUser.experiences
+      updateUser.brands = request.body.brands || updateUser.brands
 
       const saveUser = await updateUser.save();
       return response.status(200).json({
@@ -71,8 +71,7 @@ const updateUser = async (req, response) => {
     })
     }
 
-    
-    response.status(400).json({
+        response.status(400).json({
       message: "Usuário não Encontrado"
     })
   } catch (error) {
@@ -84,7 +83,7 @@ const updateUser = async (req, response) => {
 
 const deleteUser = async (request, response) => {
   try {
-    const deleteUser = await use.findById(req.params.id);
+    const deleteUser = await UserSchema.findById(request.params.id);
 
     if (deleteUser == null) {
       response.status(404).json({

@@ -15,7 +15,7 @@ app.use(express.json());
 const userRoutes = require('./routes/userRoutes');
 
 
-app.use("/user", userRoutes);
+app.use("/users", userRoutes);
 
 app.get('/', (request, response) => {
     response.status(200).send({
