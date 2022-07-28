@@ -9,7 +9,9 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+
     },
     telephone: {
         type: Number,
@@ -42,9 +44,13 @@ const UserSchema = new mongoose.Schema({
     },
     brands: {
         type: String,
-        enum: ["Samsung", "Motorola", "Apple", "Xiaomi", "LG", "ASUS", "Alcatel", "Huawei", "Lenovo", "Outros"],
         required: true
-    }
+    },
+    password: {
+        type:String,
+        required: true,
+        select: false // Não retorna a senha quando listado
+      }
 
 })
 

@@ -1,5 +1,7 @@
 const UserSchema = require('../models/userModel')
-
+const bcrypt = require("bcrypt");
+const { hashPassword} = require("../helpers/auth");
+const jwt = require("jsonwebtoken")
 
 const getAll = async (request, response) => {
   try {
@@ -14,10 +16,9 @@ const getAll = async (request, response) => {
 
 const getById = async (request, response) => {
   try {
-    const UserFind = await UserSchema.findById(req.params.id);
-    if (UserFind) {
+    const UserFind = await UserSchema.findById(request.params.id);
+    console.log (UserFind)
       response.status(200).json(UserFind);
-    }
   } catch (error) {
     response.status(500).json({
       mensagem: error.message
@@ -27,9 +28,13 @@ const getById = async (request, response) => {
 
 const createdUser = async (request, response) => {
   try {
-    const user = new user(require.body);
+    const body = request.body
+    const passwordHased = await hashPassword(body.password, response);
+    body.password = passwordHased
+    const user = new UserSchema(body);
 
     const newUser = await user.save()
+    newUser.password = undefined;
     response.status(201).json({
       mensagem: "Cadastro criado com sucesso",
       user: newUser,
@@ -93,7 +98,36 @@ const deleteUser = async (request, response) => {
     })
   }
 }
+const login = async (request, response) => {
 
+  const {email, password} = request.body;
+
+  try{
+   
+  const userRequired = await UserSchema.findOne({email: email}).select('+password');
+
+  if (!userRequired) {
+    return response.status(404).json({message: "Usuário não encontrado"})
+  }
+
+  const checkPassword = await bcrypt.compare(password, userRequired.password);
+
+
+  if (!checkPassword) {
+    return response.status(404).json({message: "Senha incorreta"})
+  }
+
+
+  const secret = process.env.SECRET;
+
+  const token = jwt.sign(
+    { id: userRequired._id}, secret)
+
+  return response.status(200).json({message: "Auth", token});
+} catch(error) {
+  return response.status(500).json({message: error.message})
+}
+}
 
 
 module.exports = {
@@ -101,6 +135,8 @@ module.exports = {
   getById,
   createdUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  login
+
 
 }
