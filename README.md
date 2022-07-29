@@ -1,8 +1,9 @@
 # {eu}Lina Tech
 
 ## Inspiração
- 
- Buscando como público alvo mulheres, inspirei-me em criar essa API para que podessemos nos conectarmos e tomar  conhecimentos mais amplos ao nível  de mulheres na tecnologia, à fim de que as mesmas conectem entre si para trocas, sugestões, ajudas, indicações tendo assim um ponto de apoio maior.
+
+ {eu}lina nasce da urgência, da necessidade e da inquietação de impulsionar mulheres nas mais diversas áreas da tecnologia e inovação. Tive a ideia de fazer uma ApI de cadastro para que pudéssemos cada vez mais nos conectar, nos motivar, tirar dúvidas, errar e acertar sem que nos sentíssemos menores e para que conquistemos o nosso espaço na profissão
+
 <br/><br/>
 
 ## Descrição da API
@@ -141,8 +142,9 @@ Para construção desse projeto foi utilizado:
 
 <br>
 
-*  Terminar implementação de código Front-end.
+* Implementar código Front-end.
 * Criar endpoints e permissões de administradores para plataforma.
 * Criar um espaço para contratações.
 
 <br>
+
