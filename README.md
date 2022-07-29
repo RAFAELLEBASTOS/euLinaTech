@@ -1,9 +1,7 @@
 # {eu}Lina Tech
 
 ## Inspiração
- Projeto Final Todas Em Tech Backend {reprograma}:
- Criar um API aplicando CRUD com tema livre.
-
+ 
  Buscando como público alvo mulheres, inspirei-me em criar essa API para que podessemos nos conectarmos e tomar  conhecimentos mais amplos ao nível  de mulheres na tecnologia, à fim de que as mesmas conectem entre si para trocas, sugestões, ajudas, indicações tendo assim um ponto de apoio maior.
 <br/><br/>
 
@@ -128,14 +126,14 @@ Para construção desse projeto foi utilizado:
 | GET          | Pública   | `https://eulina-tech.herokuapp.com/` |  Mensagem de apresentação (Index)    |
 
 ### Rotas usuários
-| Método HTTP  | Tipo Rota | Endpoint                | Descrição                                            |
-| ------------ | --------- | ----------------------- | --------------------------------------------------|
-| GET          | Privada   | `/all`               | Retorna todos usuários  
-| GET          | Privada   | `/user /search/:id`  | Retorna o usuário referente ao ID solicitado
-| POST         | Pública   | `/user/create`       | Cria/Cadastra um novo usário                                      
-| POST         | Pública   | `/user/login`        | Retorna token de login                                             |
-| PATCH        | Privada   | `/ user /update/:id` | Altera informações de um usuário  |
-| DELETE       | Privada   | `/user/delete/:id`       | Deleta um usuário específico      |
+| Método HTTP  | Tipo Rota | Endpoint                                    | Descrição                                                                |
+| ------------ | --------- | ------------------------------------------- | -------------------------------------------------------------------------|
+| GET          | Privada   | `/`     | Retorna todos usuários  
+| GET          | Privada   | `/:id`  | Retorna o usuário referente ao ID solicitado
+| POST         | Pública   | `/`     | Cria/Cadastra um novo usário                                      
+| POST         | Pública   | `/login`| Retorna token de login            |
+| PATCH        | Privada   | `/:id`  | Altera informações de um usuário  |
+| DELETE       | Privada   | `/:id`  | Deleta um usuário específico      |
 
 <br>
 
