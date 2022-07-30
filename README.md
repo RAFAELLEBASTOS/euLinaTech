@@ -2,7 +2,7 @@
 
 ## Inspiração
 
- {eu}lina nasce da urgência, da necessidade e da inquietação de impulsionar mulheres nas mais diversas áreas da tecnologia e inovação. Tive a ideia de fazer uma ApI de cadastro para que pudéssemos cada vez mais nos conectar, nos motivar, tirar dúvidas, errar e acertar sem que nos sentíssemos menores e para que conquistemos o nosso espaço na profissão
+ {eu}lina nasce da urgência, da necessidade e da inquietação de impulsionar mulheres nas mais diversas áreas da tecnologia e inovação. Tive a ideia de fazer uma ApI de cadastro para que pudéssemos cada vez mais nos conectar, nos motivar, tirar dúvidas, errar e acertar sem que nos sentíssemos menores e para que conquistemos o nosso espaço na profissão.
 
 <br/><br/>
 
@@ -13,6 +13,10 @@ Cadastro de mulheres especializadas em manutenção de celular.
 
 ## Documentação
 Veja a documentação do POSTMAN com as Rotas e demonstrando as informações a serem passada: [Postman](https://documenter.getpostman.com/view/22432896/UzXPxGjV)
+
+## Link de Apresentação
+
+* (https://bityli.com/eulinatech)
 
 ## 📁 Arquitetura MVC 
 
