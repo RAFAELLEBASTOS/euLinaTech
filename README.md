@@ -152,3 +152,13 @@ Para construção desse projeto foi utilizado:
 
 <br>
 
+## 🗣️ Agradecimentos
+
+  Gostaria de agradecer essa oportunidade incrível de ser parte deste projeto. Sem dúvidas encerrarei este ciclo com uma bagagem de humanidade sem fim, foi top o apoio, o incentivo, o cuidado, ser parte da Reprograma para mim é motivo de muito orgulho, superação e abertura de novos caminhos. Em especial gostaria de agradecer à monitora Rafaela Sygliane, a Profª Hannah Freitas e a Profª Beatriz Ramerindo, que a vida de cada uma de vocês seja repleta de grandes conquistas. 
+  "Feliz aquele que transfere o que sabe e aprende o que ensina".❤️❤️❤️
+  
+<br>
+
+## 📢 Contatos da desenvolvedora:📢 
+
+https://www.linkedin.com/in/rafaelle-bastos/
