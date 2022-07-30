@@ -3,8 +3,7 @@
 ## Inspiração
 
  {eu}lina nasce da urgência, da necessidade e da inquietação de impulsionar mulheres nas mais diversas áreas da tecnologia e inovação. Tive a ideia de fazer uma ApI de cadastro para que pudéssemos cada vez mais nos conectar, nos motivar, tirar dúvidas, errar e acertar sem que nos sentíssemos menores e para que conquistemos o nosso espaço na profissão.
-
-<br/><br/>
+<br/>
 
 ## Descrição da API
 Cadastro de mulheres especializadas em manutenção de celular.
@@ -13,10 +12,12 @@ Cadastro de mulheres especializadas em manutenção de celular.
 
 ## Documentação
 Veja a documentação do POSTMAN com as Rotas e demonstrando as informações a serem passada: [Postman](https://documenter.getpostman.com/view/22432896/UzXPxGjV)
+<br/>
 
 ## Link de Apresentação
 
 * (https://bityli.com/eulinatech)
+<br/>
 
 ## 📁 Arquitetura MVC 
 
@@ -61,6 +62,7 @@ Veja a documentação do POSTMAN com as Rotas e demonstrando as informações a 
 ## Instalação
 
 Para a instalação do projeto siga as instruções:
+<br/>
 
 ### Pré-requisitos
 É necesário possuir instalado as ferramentas:
@@ -68,6 +70,7 @@ Para a instalação do projeto siga as instruções:
 - [Node.js](https://nodejs.org/en/)
 - [database NoSQL] [Mongodb](https://www.mongodb.com)
 - IDE de sua preferencia, para a criação deste projeto foi utilizado o [VSCode](https://code.visualstudio.com).
+<br/>
 
 ### Rodando o Projeto
 1. Clone este projeto
@@ -87,6 +90,7 @@ Para a instalação do projeto siga as instruções:
 5. Execute o servidor
 
   ```$ npm start```
+<br/>
 
 ## Tecnologias
 
@@ -104,7 +108,7 @@ Para construção desse projeto foi utilizado:
 - [express](https://expressjs.com/pt-br/)
 - [cors](https://www.npmjs.com/package/cors)
 - [dotenv-safe](https://www.npmjs.com/package/dotenv-safe)
-
+<br/>
 
 ## 🔃 Rotas
 
@@ -117,6 +121,7 @@ Para construção desse projeto foi utilizado:
 <br>
 
 ## Rotas
+<br/>
 
 ### Rota inicial
 
